@@ -6,10 +6,12 @@ import { DashboardLayout } from './layouts/DashboardLayout';
 import { Landing } from './pages/Landing';
 import { Login } from './pages/Login';
 import { RegisterParent } from './pages/RegisterParent';
+import { RegisterTutor } from './pages/RegisterTutor';
 
 // Parent Pages
 import { ParentDashboard } from './pages/parent/ParentDashboard';
 import { SearchTutor } from './pages/parent/SearchTutor';
+import { ParentHistory } from './pages/parent/ParentHistory';
 
 // Tutor Pages
 import { TutorDashboard } from './pages/tutor/TutorDashboard';
@@ -28,14 +30,14 @@ function App() {
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<Login />} />
           <Route path="/register-parent" element={<RegisterParent />} />
-          {/* <Route path="/register-tutor" element={<RegisterTutor />} /> */}
+          <Route path="/register-tutor" element={<RegisterTutor />} />
         </Route>
 
         {/* Parent Routes */}
         <Route path="/parent" element={<DashboardLayout role="parent" />}>
           <Route index element={<ParentDashboard />} />
           <Route path="search" element={<SearchTutor />} />
-          {/* <Route path="history" element={<ParentHistory />} /> */}
+          <Route path="history" element={<ParentHistory />} />
         </Route>
 
         {/* Tutor Routes */}
