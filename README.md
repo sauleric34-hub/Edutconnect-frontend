@@ -51,3 +51,5 @@ src/
 
 ---
 *Projet réalisé pour EduConnect Cameroun (2026).*
+
+<!-- Auth layout by Michou -->
