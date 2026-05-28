@@ -1,0 +1,47 @@
+.action-notice {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+  width: min(420px, calc(100vw - 32px));
+  padding: 16px;
+  color: #0f172a;
+  background: #ffffff;
+  border: 1px solid rgba(16, 185, 129, 0.24);
+  border-left: 4px solid var(--success);
+  border-radius: 8px;
+  box-shadow: 0 20px 45px rgb(15 23 42 / 0.16);
+  animation: notice-in 260ms ease-out;
+}
+
+.action-notice svg {
+  color: var(--success);
+}
+
+.action-notice p {
+  margin: 4px 0 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.notice-close {
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+@keyframes notice-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

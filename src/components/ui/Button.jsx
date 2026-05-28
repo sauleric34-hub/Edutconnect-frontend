@@ -6,6 +6,7 @@ export function Button({
   variant = 'primary', 
   size = 'md', 
   fullWidth = false, 
+  loading = false,
   className = '', 
   ...props 
 }) {
@@ -16,9 +17,11 @@ export function Button({
   
   return (
     <button 
-      className={`${baseClass} ${variantClass} ${sizeClass} ${widthClass} ${className}`} 
+      className={`${baseClass} ${variantClass} ${sizeClass} ${widthClass} ${loading ? 'btn-loading' : ''} ${className}`} 
       {...props}
+      disabled={loading || props.disabled}
     >
+      {loading && <span className="btn-spinner" aria-hidden="true" />}
       {children}
     </button>
   );
